@@ -32,10 +32,11 @@
 <main role="main" class="inner cover">
 
 <h1>Результаты анализа</h1>
-
-<div>
-  <img id='image-picked' class='no-display' alt='Chosen Image' height='200'>
-</div>
+<!--новый код-->
+<img id='image-picked' src={{image_path}} alt="Изображение не найдено" height="420" width = "420">
+<h3 style="margin-top: 40px"><b>Результат распознавания: <span style="color: green">{{ label }}</span></b></h3>
+    <h3><b>Вероятность верной постановки диагноза: <span style="color: green;">{{ accuracy }} %</span></b></h3>
+<!--новый код-->
 
 <div class='result-label'>
   <label id='result-label'></label>
