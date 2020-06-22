@@ -1,0 +1,64 @@
+<!doctype html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Pneumonia Detection Web-Service">
+    <meta name="author" content="Aida Yunusova">
+    <meta name="generator" content="Jekyll v4.0.1">
+    <title>Detect Pneumonia</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/cover/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="../assets/dist/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles -->
+    <link href="index.css" rel="stylesheet">
+    <script src='index.js'></script>
+  </head>
+  <body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="masthead mb-auto">
+    <div class="inner">
+        <a href="#" class="navbar-brand d-flex align-items-center">
+            <img src="text3.png" width=40%>
+        </a>
+    </div>
+  </header>
+     
+
+  <main role="main" class="inner cover">
+    <img class="cover-heading" src="text2.png" width=100%>
+    <p class="lead">PneumoVision - веб-сервис для обнаружения признаков пневмонии на рентгеновских снимках легких. Загрузите снимок с устройства или по ссылке ниже.</p>
+   
+    <div class='content'>
+      <div class='no-display'>
+        <input id='file-input'
+               class='no-display'
+               type='file'
+               name='file'
+               accept='image/*'
+               onchange='showPicked(this)'>
+      </div>
+      <div className="input-group">
+        <input id="URL" placeholder="Введите Url" name="file" onchange="boo()" autocomplete='off'/>
+      </div>
+      <label>ИЛИ</label>
+      <button class='btn_upload' type='button' onChange={this._onFileUpload} onclick='showPicker()'>Загрузить снимок с устройства</button>
+      <div class='upload-label'>
+        <label id='upload-label'>Файл не выбран</label>
+      </div>
+      <div class='analyze'>
+        <button id='analyze-button' class='btn btn-lg btn-secondary' type='button' onclick='analyze()'>Анализировать</button>
+      </div>
+    </div>
+</main>
+
+  <footer class="mastfoot mt-auto">
+    <div class="inner">
+      <p>PneumoVision, 2020</p>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
