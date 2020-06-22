@@ -38,8 +38,8 @@ def analyze():
     if request.method == 'GET':
 	    return render_template('index.html')
     else:
-        img_data = await request.form()
-        img_bytes = await (img_data['file'].read())
+        img_data = request.form()
+        img_bytes = img_data['file'].read()
         img = open_image(BytesIO(img_bytes))
         prediction = learn.predict(img)[0]
     return render_template('result.html', label = prediction, image_path = img)
