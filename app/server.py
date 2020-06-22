@@ -56,15 +56,16 @@ async def homepage(request):
 
 
 @app.route('/analyze', methods=['POST'])
+async def result_f(request):
+    html_file = path / 'view' / 'result.html'
+    return HTMLResponse(html_file.open().read())
 async def analyze(request):
     img_data = await request.form()
     img_bytes = await (img_data['file'].read())
     img = open_image(BytesIO(img_bytes))
     prediction = learn.predict(img)[0]
     return JSONResponse({'result': str(prediction)})
-async def result_f(request):
-    html_file = path / 'view' / 'result.html'
-    return HTMLResponse(html_file.open().read())
+
 
 
 if __name__ == '__main__':
