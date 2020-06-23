@@ -18,7 +18,7 @@ path = Path(__file__).parent
 app = Flask(__name__, static_folder='app/static', root_path='/static')
 
 
-def load_model(path="app/models", model_name="export.pkl"):
+def load_model(path=".", model_name="export.pkl"):
         learn = load_learner(path, file=model_name)
         return learn
 
