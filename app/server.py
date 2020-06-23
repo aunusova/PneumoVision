@@ -56,7 +56,7 @@ def before_request():
     app.jinja_env.cache = {}
 
 torch.nn.Module.dump_patches = True
-model = load_model('models')
+model = load_model(path="app/models", model_name="export.pkl")
 
 @app.route('/api/classes', methods=['GET'])
 def classes():
